@@ -316,6 +316,7 @@ def runs(args):
                         dist.reduce(loss_i, 0, op = dist.ReduceOp.SUM)
                         loss_i = loss_i / args.world_size
                         loss += loss_i
+                        print(key, loss, loss_i)
                         if key not in loss_detail_t.keys():
                             loss_detail_t[key] = AverageMeter()
 
