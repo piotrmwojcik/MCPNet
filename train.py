@@ -455,6 +455,7 @@ if __name__ == '__main__':
     args.train_total_batch_size = args.train_batch_size
     args.val_total_batch_size = args.val_batch_size
     if args.local_rank != -1:
+        print('!!! ', torch.cuda.device_count(), args.local_rank)
         assert torch.cuda.device_count() > args.local_rank
         torch.cuda.set_device(args.local_rank)
         device_id = torch.device('cuda', args.local_rank)
