@@ -1,2 +1,2 @@
 export CUDA_LAUNCH_BLOCKING=1
-TORCH_USE_CUDA_DSA=1 python -m torch.distributed.launch --nproc_per_node=1 --master_port 9573 train.py --index Caltech_test --model ResNet --basic_model resnet50_relu --devices 0 --dataset_name Caltech101 --margin 0.01 --concept_cha 32 32 32 32 --concept_per_layer 8 16 32 64 --optimizer adam
+TORCH_USE_CUDA_DSA=1 python -m torch.distributed.launch --nproc_per_node=1 --master_port 9573 train.py --index Mnist_test --model ResNet --basic_model resnet50_relu --devices 0 --dataset_name Mnist --margin 0.01 --concept_cha 32 32 32 32 --concept_per_layer 8 16 32 64 --optimizer adam
