@@ -98,6 +98,10 @@ def read_args():
         cfg.category = 101
         cfg.train_dataset_path = "/data/pwojcik/caltech-101/train"
         cfg.val_dataset_path = "/data/pwojcik/caltech-101/test"
+    elif cfg.dataset_name == "Mnist":
+        cfg.category = 2
+        cfg.train_dataset_path = "/data/pwojcik/mnist_ds/train"
+        cfg.val_dataset_path = "/data/pwojcik/mnist_ds/test"
     elif cfg.dataset_name == "Caltech101_s":
         cfg.category = 81
         cfg.train_dataset_path = "/eva_data_4/bor/datasets/101_ObjectCategories/seen/train"
