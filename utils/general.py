@@ -104,7 +104,7 @@ def cal_class_MCP(model, concept_vecs, concept_means, dataloader, num_class, arg
                         torch.zeros([num_class] + [concept_vecs[1].shape[0]], requires_grad = False).cuda(args.global_rank),
                         torch.zeros([num_class] + [concept_vecs[2].shape[0]], requires_grad = False).cuda(args.global_rank),
                         torch.zeros([num_class] + [concept_vecs[3].shape[0]], requires_grad = False).cuda(args.global_rank)]
-    
+    print('dupa1')
     pbar = enumerate(dataloader)
     if args.global_rank in [-1, 0]:
         pbar = tqdm.tqdm(pbar, total = len(dataloader))
@@ -116,6 +116,7 @@ def cal_class_MCP(model, concept_vecs, concept_means, dataloader, num_class, arg
             img = img.cuda(args.global_rank)
             l1, l2, l3, l4 = model(img)
             feats = [l1, l2, l3, l4]
+            print('dupa2')
             for layer_i, feat in enumerate(feats):
                 B, C, H, W = feat.shape
                 feat = feat.reshape(B, C // args.concept_cha[layer_i], args.concept_cha[layer_i], H, W)
