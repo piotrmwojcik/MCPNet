@@ -95,8 +95,8 @@ def read_args():
         cfg.val_dataset_path = "/eva_data_4/bor/datasets/Animals_with_Attributes2/JPEGImages/seen/val"
     elif cfg.dataset_name == "Caltech101":
         cfg.category = 101
-        cfg.train_dataset_path = "/eva_data_4/bor/datasets/101_ObjectCategories/train"
-        cfg.val_dataset_path = "/eva_data_4/bor/datasets/101_ObjectCategories/val"
+        cfg.train_dataset_path = "/data/pwojcik/caltech-101/train"
+        cfg.val_dataset_path = "/data/pwojcik/caltech-101/test"
     elif cfg.dataset_name == "Caltech101_s":
         cfg.category = 81
         cfg.train_dataset_path = "/eva_data_4/bor/datasets/101_ObjectCategories/seen/train"
