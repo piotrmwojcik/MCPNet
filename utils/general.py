@@ -112,6 +112,7 @@ def cal_class_MCP(model, concept_vecs, concept_means, dataloader, num_class, arg
         for iteration, (img, label) in pbar:
             class_count.index_add_(0, label.cuda(args.global_rank), torch.tensor([1.] * label.shape[0]).cuda(args.global_rank))
             max_responses = []
+            print('!!! ', args.global_rank)
             img = img.cuda(args.global_rank)
             l1, l2, l3, l4 = model(img)
             feats = [l1, l2, l3, l4]
