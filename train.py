@@ -311,7 +311,7 @@ def runs(args):
                         resp_top1, resp_top5 = cal_acc(features, class_MCP, concept_vectors, concept_means, args)
 
                     loss = 0
-                    print(phase, losses.keys())
+                    print('!!!', phase, losses.keys())
                     for key in losses.keys():
                         loss_i = losses[key]
                         dist.reduce(loss_i, 0, op = dist.ReduceOp.SUM)
