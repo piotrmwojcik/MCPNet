@@ -12,7 +12,7 @@ def read_args():
     parser.add_argument("--log_type", default = ["std", "log"], type = str, nargs = "+")
 
     # training hyper parameters
-    parser.add_argument("--local_rank", type = int, default = -1, help = "DDP parameter. (Don't modify !!)")
+    parser.add_argument("--local_rank", type = int, default =-1, help = "DDP parameter. (Don't modify !!)")
     parser.add_argument("--local-rank", type=int, default=-1, help="DDP parameter. (Don't modify !!)")
     parser.add_argument("--devices", type = int, default = None, required = True, nargs = "+")
     parser.add_argument("--epoch", type = int, default = 50)
