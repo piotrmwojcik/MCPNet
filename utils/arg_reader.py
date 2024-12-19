@@ -13,6 +13,7 @@ def read_args():
 
     # training hyper parameters
     parser.add_argument("--local_rank", type = int, default = -1, help = "DDP parameter. (Don't modify !!)")
+    parser.add_argument("--local-rank", type=int, default=-1, help="DDP parameter. (Don't modify !!)")
     parser.add_argument("--devices", type = int, default = None, required = True, nargs = "+")
     parser.add_argument("--epoch", type = int, default = 50)
     parser.add_argument("--optimizer", type = str, default = None, required = True, choices = ["adam", "sgd", "adamw"])
