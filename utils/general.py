@@ -212,9 +212,9 @@ def get_dataset(case_name: str) -> Tuple[str, str, str, int]:
         num_class = 196
     elif "Caltech101" in case_name:
         print("Using Caltech101")
-        data_path = "/eva_data_4/bor/datasets/101_ObjectCategories/"
+        data_path = "/data/pwojcik/caltech-101/"
         train_path = "train"
-        val_path = "val"
+        val_path = "test"
         num_class = 101
     elif "Food" in case_name:
         print("Using Food101")
