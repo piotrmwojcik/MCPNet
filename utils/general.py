@@ -188,7 +188,7 @@ def cal_acc(feats, class_MCP, concept_vecs, concept_means, args):
 
     Diff_centroid_dist_resp = torch.stack(Diff_centroid_dist_resp, dim = 1)
     return torch.topk(-Diff_centroid_dist_resp, dim = 1, k = 1)[1], \
-           torch.topk(-Diff_centroid_dist_resp, dim = 1, k = 5)[1]
+           torch.topk(-Diff_centroid_dist_resp, dim = 1, k = 1)[1]
 
 def get_dataset(case_name: str) -> Tuple[str, str, str, int]:
     if "AWA2" in case_name:
