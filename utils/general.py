@@ -111,7 +111,6 @@ def cal_class_MCP(model, concept_vecs, concept_means, dataloader, num_class, arg
     with torch.no_grad():
         for iteration, (img, label) in pbar:
             #print('label shape ', label.shape, class_count.shape)
-            print(label.cuda(args.global_rank))
             class_count.index_add_(0, label.cuda(args.global_rank), torch.tensor([1.] * label.shape[0]).cuda(args.global_rank))
             max_responses = []
             img = img.cuda(args.global_rank)
