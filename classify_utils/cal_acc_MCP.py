@@ -99,7 +99,7 @@ def cal_top1_topk(feats, cent_MCP, concept_vecs, concept_means, selected_node, a
         Diff_centroid_dist_resp.append(resp_sims)
     Diff_centroid_dist_resp = torch.stack(Diff_centroid_dist_resp, dim = 1)
     return torch.topk(-Diff_centroid_dist_resp, dim = 1, k = 1)[1], \
-           torch.topk(-Diff_centroid_dist_resp, dim = 1, k = 5)[1]
+           torch.topk(-Diff_centroid_dist_resp, dim = 1, k = 1)[1]
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
