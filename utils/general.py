@@ -221,6 +221,12 @@ def get_dataset(case_name: str) -> Tuple[str, str, str, int]:
         train_path = "train"
         val_path = "test"
         num_class = 2
+    elif "Shapes" in case_name:
+        print("Using Mnist")
+        data_path = "/data/pwojcik/shapes4/"
+        train_path = "train"
+        val_path = "test"
+        num_class = 2
     elif "Plants" in case_name:
         print("Using Plants")
         data_path = "/data/pwojcik/PlantDoc-Dataset/"
