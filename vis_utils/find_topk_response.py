@@ -73,10 +73,10 @@ if __name__ == "__main__":
         train_loader = DataLoader(train_dataset, batch_size = 128, shuffle = False, num_workers = 8)
 
         concept_covs = torch.load(f"./PCA_concept_specific_tmp/{case_name}/{args.basic_model}/cov_topk2.pkl",
-                                  map_location=torch.device('cpu'))
+                                  map_location=torch.device('cuda'))
         concept_means = torch.load(f"./PCA_concept_specific_tmp/{case_name}/{args.basic_model}/mean_topk2.pkl"
                                    ,
-                                   map_location=torch.device('cpu'))
+                                   map_location=torch.device('cuda'))
         concept_vecs, concept_means = load_concept(concept_covs, concept_means, args.eigen_topk)
 
         print(f"CUDA Available: {torch.cuda.is_available()}")
