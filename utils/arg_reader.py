@@ -102,6 +102,10 @@ def read_args():
         cfg.category = 2
         cfg.train_dataset_path = "/data/pwojcik/mnist_ds/train"
         cfg.val_dataset_path = "/data/pwojcik/mnist_ds/test"
+    elif cfg.dataset_name == "Shapes":
+        cfg.category = 2
+        cfg.train_dataset_path = "/data/pwojcik/shapes4/train"
+        cfg.val_dataset_path = "/data/pwojcik/shapes4/test"
     elif cfg.dataset_name == "Plants":
         cfg.category = 27
         cfg.train_dataset_path = "/data/pwojcik/PlantDoc-Dataset/train"
