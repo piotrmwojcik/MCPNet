@@ -32,6 +32,7 @@ class customDataset(ImageFolder):
         
         return img, label, ori_img, image_path
 
+
 if __name__ == "__main__":
     print("Find top-k concept response from the dataset!!!")
 
@@ -78,6 +79,7 @@ if __name__ == "__main__":
                                    map_location=torch.device('cpu'))
         concept_vecs, concept_means = load_concept(concept_covs, concept_means, args.eigen_topk)
 
+        print(f"CUDA Available: {torch.cuda.is_available()}")
         model = load_model(args.model, args.basic_model, num_class).cuda()
         trained_param_path = f"./pkl/{case_name}/{args.model.lower()}_{args.basic_model}/best_model.pkl"
         load_weight(model, trained_param_path)
